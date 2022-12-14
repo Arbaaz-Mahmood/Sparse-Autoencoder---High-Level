@@ -1,0 +1,30 @@
+entrypoint = "main.el"
+
+run = [
+    "emacs",
+    "-nw",
+    "-Q",
+    "--script",
+    "main.el"
+]
+
+[env]
+LC_ALL = "en_US.utf8"
+
+[interpreter]
+command = [
+    "prybar-elisp",
+    "--ps1",
+    "\u001b[33m\u001b[00m ",
+    "-i",
+    "-c",
+    ";; Hint: To type M-x, use ESC x instead.",
+    "main.el"
+]
+
+[packager]
+language = "elisp"
+
+[packager.features]
+packageSearch = true
+guessImports = true
